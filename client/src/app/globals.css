@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply bg-surface text-gray-900 font-sans antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    height: 4px;
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-gray-300 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-gray-400; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white font-semibold px-6 py-2.5 rounded shadow-md
+           hover:brightness-110 active:scale-95 transition-all duration-150 text-sm;
+  }
+
+  .btn-outline {
+    @apply border border-white text-white font-semibold px-6 py-2 rounded
+           hover:bg-white hover:text-primary transition-colors duration-150 text-sm;
+  }
+
+  .product-card {
+    @apply bg-white rounded-sm shadow-card hover:shadow-card-hover
+           transition-shadow duration-200 cursor-pointer overflow-hidden;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 text-xs font-semibold px-1.5 py-0.5 rounded;
+  }
+}
